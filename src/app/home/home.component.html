@@ -1,0 +1,113 @@
+ <div class="home-container">
+
+  
+    <div class="home__body">
+  
+      <app-left-side></app-left-side>
+  
+      <div class="home__body__contentMiddle">
+  
+        <div class="home__body__contentMiddle__top">
+          <!--IMAGE CARDS-->
+          <mat-card *ngFor="let i of images" class="image-card">
+            <img alt="bg"
+                 class="bg" src="{{ i }}">
+            <mat-card-content>
+              <img
+                alt="avatar"
+                class="avatar" src="{{i}}">
+              <span class="card-name">Ahmed Kamel</span>
+            </mat-card-content>
+          </mat-card>
+  
+        </div>
+  
+        <div class="home__body__contentMiddle__center">
+          <mat-card class="post-message">
+            <mat-card-header class="post-message-header"
+                             style="padding-bottom: 20px; border-bottom: 1px solid lightgray;">
+              <img
+                alt=""
+                mat-card-avatar
+                src="../../assets/ahmedKamel25.jpg">
+              <form [formGroup]="postFace" (ngSubmit)="onSubmit()">
+                <input class="on-your-mind" name="message" formControlName="nasi" placeholder="What's on your mind?" type="text">
+                <button style="display: none;" type="submit"></button>
+              </form>
+  
+            </mat-card-header>
+            <mat-card-content class="card-body">
+              <div>
+                <mat-icon color="accent">videocam</mat-icon>
+                <span>Live Video</span>
+              </div>
+  
+              <div>
+                <mat-icon color="primary">photo_album</mat-icon>
+                <span>Photo/Video</span>
+              </div>
+  
+              <div>
+                <mat-icon color="warn">mood</mat-icon>
+                <span>Feeling/Activity</span>
+              </div>
+            </mat-card-content>
+          </mat-card>
+  
+          <mat-card class="example-card" *ngFor="let post of data_posts">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image">
+                <img class="image-acc" src="{{post.acco_img}}"/>
+              </div>
+              <mat-card-title>{{post.name}}</mat-card-title>
+              <mat-card-subtitle>{{post.hour}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                {{post.post}}
+              </p>
+            </mat-card-content>
+            <img *ngIf="post.img" mat-card-image src="{{post.img}}" alt="Photo">
+
+            <div class="emoji">
+              <div><span> <img src="../../assets/smile.png" alt=""></span> 200</div>
+              <div> 
+                <span>312 Comment</span>
+                <span  class="share">299 Share</span>
+
+
+              </div>
+            </div>
+            <hr/>
+            <mat-card-actions>
+              <button mat-button>
+                <mat-icon>thumb_up_alt</mat-icon>
+                LIKE</button>
+                <button mat-button>
+                  <mat-icon >comment</mat-icon>
+                  Comment
+                </button>
+              <button mat-button>
+                <mat-icon >share</mat-icon>
+                SHARE
+              </button>
+
+            </mat-card-actions>
+          </mat-card>
+
+  
+        </div>
+  
+  
+      </div>
+        <app-right-side ></app-right-side>
+  
+    </div>
+  </div>
+  
+
+
+
+
+
+

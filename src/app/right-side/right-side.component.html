@@ -1,0 +1,40 @@
+  
+      <div class="home__body__feedRight">
+        <div class="inside">
+          <div class="requests">
+            <div class="friends-requets">
+              <img src="../../assets/friends.png"/>
+              <span>Friends requests</span>
+          </div>
+            <div class="requests-img">
+              <div class="requests-img-friend"></div>
+              <div>
+                <h3 class="request-name">shady ali</h3>
+                <button type="button" class="request-confirm">Confirm</button>
+                <button type="button"  class="request-delete">Delete</button>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="right-sec">
+            <hr/>
+            <div class="right-icons">
+              <h3> Contacts </h3>
+              <div >   
+                <mat-icon >videocam</mat-icon>
+
+                <mat-icon class="search-icon search-i" >search_outline</mat-icon>
+              </div>
+            </div>
+
+            <div *ngFor="let friend of friends" class="right-sec-friends">
+              <img src="{{friend.img}}"/>
+              <h3 class="right-name">{{friend.name}}</h3>
+            </div>
+          </div>
+
+        </div>
+    
+      </div>
